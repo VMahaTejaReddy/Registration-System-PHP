@@ -58,11 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
             $file = $_FILES['profile_picture'];
-            $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+            $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
             $max_size = 3 * 1024 * 1024; // 3MB
 
             if (!in_array($file['type'], $allowed_types)) {
-                $errors[] = "Only JPEG, PNG, or GIF files are allowed.";
+                $errors[] = "Only JPEG, PNG, JPG, or GIF files are allowed.";
             } if ($file['size'] > $max_size) {
                 $errors[] = "File size must be less than 3MB.";
             } else {
