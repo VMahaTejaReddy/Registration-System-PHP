@@ -2,22 +2,9 @@
 session_start();
 require 'database.php';
 
-// Check if user is admin
-// if (!isset($_SESSION['logged_in']) || $_SESSION['user']['role'] !== 'Admin') {
-//     header('Location: login.php');
-//     exit;
-// }
-
 // Handle delete action
 if (isset($_GET['delete'])) {
     $userId = $_GET['delete'];
-
-    // Prevent self-deletion
-    // if ($userId == $_SESSION['user']['id']) {
-    //     $_SESSION['error'] = "You cannot delete your own account";
-    //     header("Location: admindashboard.php");
-    //     exit;
-    // }
 
     $db = new Database();
     $conn = $db->connect();
