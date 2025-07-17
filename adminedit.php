@@ -47,6 +47,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($first_name) || !preg_match("/^[a-zA-Z ]{2,50}$/", $first_name)) {
         $errors[] = "First name must be 2-50 letters only.";
     }
+    if (empty($last_name) || !preg_match("/^[a-zA-Z ]{2,50}$/", $last_name)) {
+        $errors[] = "Last name must be 2-50 letters only.";
+    }
+    if (empty($user_name) || !preg_match("/^[a-zA-Z0-9_]{2,50}$/", $user_name)) {
+        $errors[] = "Username must be 2-50 letters, numbers, or underscores.";
+    }
+    if (empty($email) || !preg_match("/^[a-zA-Z]*[0-9]+[a-zA-Z0-9]*@gmail\.com$/", $email)) {
+        $errors[] = "Email must be a valid Gmail address with at least one number (e.g., john123@gmail.com).";
+    }
+    if (strlen($password) < 8 || !preg_match("/[A-Za-z0-9]/", $password)) {   
+        $errors[] = "Password must be at least 8 characters with letters and numbers.";
+    }
+    if ($password !== $confirm_password) {
+        $errors[] = "Passwords do not match.";
+    }
+    if (empty($courses)) {
+        $errors[] = "Select at least one course.";
+    }
+    if (!in_array($education, ['btech', 'mtech', 'phd'])) {
+        $errors[] = "Select a valid education level.";
+    }
+    if (!in_array($role, ['admin', 'user'])) {
+        $errors[] = "Select a valid role.";
+    }
+    if (!is_numeric($age) || $age < 18 || $age > 100) {
+        $errors[] = "Age must be between 18 and 100.";
+    }
+    if (!preg_match("/^[0-9]{10}$/", $phone)) {
+        $errors[] = "Phone number must be 10 digits.";
+    }
+
     // Add other validations as needed...
 
     // Handle file upload if new picture provided
