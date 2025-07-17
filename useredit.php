@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $profile_picture = $user['profile_picture'];
     if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
         $file = $_FILES['profile_picture'];
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
         $max_size = 3 * 1024 * 1024; // 3MB
 
         if (in_array($file['type'], $allowed_types) && $file['size'] <= $max_size) {
