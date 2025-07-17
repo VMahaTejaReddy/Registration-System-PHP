@@ -212,7 +212,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     <!-- Right Column -->
                     <div class="space-y-4">
-                                                
+                        
+                        
                         <!-- Role -->
                         <div>
                             <label for="role" class="block text-gray-700 font-bold mb-2">User Role</label>
