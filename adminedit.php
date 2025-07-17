@@ -212,16 +212,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     <!-- Right Column -->
                     <div class="space-y-4">
-                        <!-- Account Status -->
-                        <div>
-                            <label class="block text-gray-700 font-bold mb-2">Account Status</label>
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" name="is_active" class="form-checkbox h-5 w-5 text-blue-600" 
-                                    <?php echo ($user['is_active'] ?? 1) ? 'checked' : ''; ?>>
-                                <span class="ml-2">Active Account</span>
-                            </label>
-                        </div>
-                        
+                                                
                         <!-- Role -->
                         <div>
                             <label for="role" class="block text-gray-700 font-bold mb-2">User Role</label>

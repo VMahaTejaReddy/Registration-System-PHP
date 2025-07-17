@@ -13,11 +13,11 @@ if (isset($_GET['delete'])) {
     $userId = $_GET['delete'];
 
     // Prevent self-deletion
-    if ($userId == $_SESSION['user']['id']) {
-        $_SESSION['error'] = "You cannot delete your own account";
-        header("Location: admindashboard.php");
-        exit;
-    }
+    // if ($userId == $_SESSION['user']['id']) {
+    //     $_SESSION['error'] = "You cannot delete your own account";
+    //     header("Location: admindashboard.php");
+    //     exit;
+    // }
 
     $db = new Database();
     $conn = $db->connect();
@@ -70,12 +70,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body class="bg-gray-100">
     <div class="container mx-auto py-8">
         <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold text-gray-800">User Management</h1>
+            <h1 class="text-3xl font-bold text-gray-800 ml-3">User Management</h1>
             <div class="flex gap-4">
-                <a href="dashboard.php" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded action-btn">
-                    <i class="fas fa-user mr-2"></i>My Account
-                </a>
-                <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded action-btn">
+                
+                <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded action-btn mr-3">
                     <i class="fas fa-sign-out-alt mr-2"></i>Logout
                 </a>
             </div>
