@@ -9,15 +9,6 @@ if (isset($_GET['delete'])) {
     $db = new Database();
     $conn = $db->connect();
 
-    // Get user data first to delete profile picture
-    $stmt = $conn->prepare("SELECT profile_picture FROM user_details WHERE id = ?");
-    $stmt->execute([$userId]);
-    $user = $stmt->fetch();
-
-    if ($user && !empty($user['profile_picture']) && file_exists($user['profile_picture'])) {
-        unlink($user['profile_picture']);
-    }
-
     // Delete user from database
     $stmt = $conn->prepare("DELETE FROM user_details WHERE id = ?");
     $stmt->execute([$userId]);
