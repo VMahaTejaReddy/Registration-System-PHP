@@ -90,9 +90,13 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <tbody class="bg-white divide-y divide-gray-200">
                         <?php foreach ($users as $user): ?>
                         <tr class="hover:bg-gray-50">
+                            
+                            <!-- ID -->
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <?php echo $user['id']; ?>
                             </td>
+
+                            <!-- Profile Picture -->
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="h-10 w-10 rounded-full overflow-hidden border-2 border-gray-200">
                                     <?php if (!empty($user['profile_picture'])): ?>
@@ -104,20 +108,31 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <?php endif; ?>
                                 </div>
                             </td>
+                            
                             <td class="px-6 py-4 whitespace-nowrap">
+
+                                <!-- Name -->
                                 <div class="text-sm font-medium text-gray-900">
                                     <?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?>
                                 </div>
+
+                                <!-- Phone -->
                                 <div class="text-sm text-gray-500">
                                     <?php echo htmlspecialchars($user['phone'] ?? 'N/A'); ?>
                                 </div>
                             </td>
+
+                            <!-- UserName -->
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <?php echo htmlspecialchars($user['user_name']); ?>
                             </td>
+
+                            <!-- Email -->
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <?php echo htmlspecialchars($user['email'] ?? 'N/A'); ?>
                             </td>
+
+                            <!-- Role -->
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
                                     <?php echo $user['role'] === 'Admin' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'; ?>">
