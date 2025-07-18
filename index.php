@@ -159,27 +159,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" enctype="multipart/form-data" class="space-y-4">
             <div>
                 <label for="first_name" class="block text-gray-700">First Name</label>
-                <input type="text" id="first_name" name="first_name" value="<?php echo htmlspecialchars($first_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" value="<?php echo htmlspecialchars($first_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="last_name" class="block text-gray-700">Last Name</label>
-                <input type="text" id="last_name" name="last_name" value="<?php echo htmlspecialchars($last_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" value="<?php echo htmlspecialchars($last_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="user_name" class="block text-gray-700">Username</label>
-                <input type="text" id="user_name" name="user_name" value="<?php echo htmlspecialchars($user_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="text" id="user_name" name="user_name" placeholder="Enter your username" value="<?php echo htmlspecialchars($user_name ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="email" class="block text-gray-700">Email</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="email" id="email" name="email" placeholder="Enter your email" value="<?php echo htmlspecialchars($email ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="password" class="block text-gray-700">Password</label>
-                <input type="password" id="password" name="password" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="password" id="password" name="password" placeholder="Enter your password" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="confirm_password" class="block text-gray-700">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label class="block text-gray-700 mb-1">Courses</label>
@@ -215,11 +215,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div>
                 <label for="age" class="block text-gray-700">Age</label>
-                <input type="number" id="age" name="age" value="<?php echo htmlspecialchars($age ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="number" id="age" name="age" placeholder="Enter your age" value="<?php echo htmlspecialchars($age ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="phone" class="block text-gray-700">Phone Number</label>
-                <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($phone ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" value="<?php echo htmlspecialchars($phone ?? ''); ?>" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400">
             </div>
             <div>
                 <label for="profile_picture" class="block text-gray-700">Profile Picture</label>

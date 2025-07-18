@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['user_name' => $user_name]);
         $user = $stmt->fetch();
 
-        if ($user || password_verify($password, $user['password'])) {
+        if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user'] = [
                 'id' => $user['id'],
                 'first_name' => $user['first_name'],

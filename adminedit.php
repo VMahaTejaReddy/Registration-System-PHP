@@ -56,11 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || !preg_match("/^[a-zA-Z]*[0-9]+[a-zA-Z0-9]*@gmail\.com$/", $email)) {
         $errors[] = "Email must be a valid Gmail address with at least one number (e.g., john123@gmail.com).";
     }
-    if (strlen($password) < 8 || !preg_match("/[A-Za-z0-9]/", $password)) {   
-        $errors[] = "Password must be at least 8 characters with letters and numbers.";
-    }
-    if ($password !== $confirm_password) {
-        $errors[] = "Passwords do not match.";
+    if (empty($phone) || !preg_match("/^[0-9]{10}$/", $phone)) {
+        $errors[] = "Phone number must be 10 digits.";
     }
     if (empty($courses)) {
         $errors[] = "Select at least one course.";
