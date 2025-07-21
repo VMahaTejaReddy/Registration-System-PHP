@@ -9,12 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_name = trim(htmlspecialchars($_POST['user_name'] ?? ''));
     $password = $_POST['password'] ?? '';
 
-    if (empty($user_name) || empty($password)) {
+    if (empty($user_name) && empty($password)) {
         $errors[] = "Username and password are required.";
+    } elseif(empty($user_name)){
+        $errors[] = "Username cannot be empty.";
+    } elseif(empty($password)){
+        $errors[] = "Password cannot be empty.";
     } else {
         $db = new Database();
         $conn = $db->connect();
-
         $stmt = $conn->prepare("SELECT * FROM user_details WHERE user_name = :user_name");
         $stmt->execute(['user_name' => $user_name]);
         $user = $stmt->fetch();
